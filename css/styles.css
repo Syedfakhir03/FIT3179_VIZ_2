@@ -1,0 +1,170 @@
+/* Base Styles */
+body {
+    background-color: lightcyan;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header Styling */
+.headercontainer {
+    background-color: darkgray;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.headertext h1 {
+    font-size: 42px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.headertext p {
+    font-size: 18px;
+    color: black;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Section Titles */
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif; /* Replace with your preferred sans-serif font */
+}
+
+
+p {
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 auto 20px auto;
+    max-width: 800px;
+    color: #555;
+}
+
+/* Visualization Containers */
+.mapcontainer, .stackedbarcontainer, .stackedareacontainer, .bubblecontainer {
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Page Layout */
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Horizontal Rules */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+    color: #777;
+}
+
+/* Section Layout */
+section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Container for Chart and Text */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Chart Styling */
+.chart {
+    flex-grow: 1;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Content Styling */
+.text-content {
+    max-width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Controls Container */
+.controls-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* Pause Button Styling */
+#pauseButton {
+    padding: 10px 20px;
+    background-image: linear-gradient(135deg, #34568B 30%, #1D3557 90%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    margin-left: 10px; /* Added margin to separate from other elements */
+}
+
+#pauseButton:hover {
+    background-image: linear-gradient(135deg, #1D3557 30%, #35373c 90%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#pauseButton:active {
+    background-image: linear-gradient(135deg, #152238 30%, #32363b 90%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(1px);
+}
+
+/* Divider Styling */
+.custom-divider {
+    height: 5px;
+    border: none;
+    margin: 30px 0;
+    background-image: linear-gradient(to right, #FFC107, #FFC107 50%, transparent 50%);
+    background-size: 10px 100%;
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+}
+

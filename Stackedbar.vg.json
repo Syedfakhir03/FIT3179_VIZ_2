@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 450,
+  "description": "Interactive Meat Production Stacked Bar Chart with Legend",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Syedfakhir03/Week-09_HW-/refs/heads/main/Data/Cleaned_Meat_Production_Data.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "fold": [
+        "Bovine Meat",
+        "Fish, Seafood",
+        "Meat, Other",
+        "Mutton & Goat Meat",
+        "Pigmeat",
+        "Poultry Meat"
+      ],
+      "as": ["Meat Type", "Production"]
+    },
+    {
+      "filter": "datum['Meat Type'] == MeatType_selection || MeatType_selection == null"
+    },
+    {
+      "calculate": "datum['Meat Type'] == 'Bovine Meat' ? '#e74c3c' : datum['Meat Type'] == 'Fish, Seafood' ? '#3498db' : datum['Meat Type'] == 'Meat, Other' ? '#2ecc71' : datum['Meat Type'] == 'Mutton & Goat Meat' ? '#9b59b6' : datum['Meat Type'] == 'Pigmeat' ? '#f39c12' : '#837f12'",
+      "as": "dynamicColor"
+    }
+  ],
+  "params": [
+    {
+      "name": "MeatType_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Bovine Meat", "Fish, Seafood", "Meat, Other", "Mutton & Goat Meat", "Pigmeat", "Poultry Meat"],
+        "labels": ["Show All", "Bovine Meat", "Fish, Seafood", "Meat, Other", "Mutton & Goat Meat", "Pigmeat", "Poultry Meat"],
+        "name": "Filter by Meat Type: "
+      }
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 10,
+    "cornerRadiusTopRight": 10
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Production",
+      "type": "quantitative",
+      "title": "Total Production"
+    },
+    "color": {
+      "field": "Meat Type",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Bovine Meat",
+          "Fish, Seafood",
+          "Meat, Other",
+          "Mutton & Goat Meat",
+          "Pigmeat",
+          "Poultry Meat"
+        ],
+        "range": ["#E15759", "#4E79A7", "#76B7B2", "#F28E2B", "#59A14F", "#EDC948"]
+      },
+      "legend": {
+        "title": "Meat Type",
+        "labelFontSize": 16,
+        "titleFontSize": 18,
+        "titleFontWeight": "bold",
+        "orient": "right"
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {"field": "Meat Type", "type": "nominal", "title": "Meat Type"},
+      {
+        "field": "Production",
+        "type": "quantitative",
+        "title": "Production",
+        "format": ","
+      }
+    ]
+  }
+}
